@@ -137,5 +137,10 @@ abordarBarcoEnAltaMar :: Barco -> Barco -> Barco --El barco con mas piratas secu
 abordarBarcoEnAltaMar barco1 barco2 = secuestrarTripulacion (barcoGanador barco1 barco2) (barcoPerdedor barco1 barco2)
 
 --HACETE TODA LA PELICULA
---hacerTodaLaPelicula => 
---hacerTodaLaPelicula  = (pirataAbandona(ejemploBarco1,ejemploPirata3))
+jackSparrow = ("Jack Sparrow",[])
+perlaNegra = ("Perla Negra",saqueoValioso,[])
+portRoyale = ("Port Royal",[("Diamante",10000),("Espada",100),("Pintura",150),("Reloj de oro",350),("Ron",25)])
+islaDelRon = ("Isla del Ron",("Ron",150))
+islaDesierta = ("Isla Desierta",("Frasco de Arena",1))
+--hacerTodaLaPelicula => Jack sparrow parte en busca de botin para lograr ser un pirata afortunado como capitan de Perla Negra hacia la ciudad Port Royale seguido por la Isla del Ron y otra isla cercana
+hacerTodaLaPelicula = map esAfortunado (tripulacionDelBarco (anclarEnIslaDeshabitada (anclarEnIslaDeshabitada (atacarCiudad (pirataSeIncorpora perlaNegra jackSparrow) portRoyale) islaDelRon) islaDesierta))
